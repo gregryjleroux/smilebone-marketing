@@ -3,210 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smile Bone Benefits</title>
-    <!-- Tailwind CSS CDN for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SmileBone Marketing - 25+ Years of Marketing Excellence</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
         }
-        .bg-custom-blue {
-            background-color: #003366; /* EmployWell Now's brand color */
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .text-custom-yellow {
-            color: #FFC72C;
-        }
-        /* Style for the custom message box */
-        .message-box {
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            color: white;
+            padding: 1rem 0;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            top: 0;
             z-index: 1000;
-            display: none; /* Hidden by default */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f4d03f;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #1e3a5f;
+            border: 2px solid #f4d03f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .smile {
+            position: absolute;
+            width: 20px;
+            height: 15px;
+        }
+        
+        .smile::before,
+        .smile::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #f4d03f;
+            border-radius: 50%;
+            top: 2px;
+        }
+        
+        .smile::before { left: 4px; }
+        .smile::after { right: 4px; }
+        
+        .smile-curve {
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 6px;
+            border: 2px solid #f4d03f;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #f4d03f;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #f4d03f 0%, #f39c12 100%);
+            color: #1e3a5f;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c3e50 100%);
+            color: white;
+            padding: 140px 0 100px;
             text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #f4d03f;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Experience Section */
+        .experience {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .experience-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .experience-text h2 {
+            font-size: 2.5rem;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-highlight {
+            font-size: 4rem;
+            color: #f4d03f;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .experience-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #f4d03f;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3a5f;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #f4d03f;
+        }
+        
+        .service-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Results Section */
+        .results {
+            padding: 80px 0;
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+        }
+        
+        .results h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .result-item {
+            padding: 2rem;
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            color: #f4d03f;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: #f4d03f;
+            outline: none;
+        }
+        
+        .contact-form button {
+            background: linear-gradient(135deg, #f4d03f 0%, #f39c12 100%);
+            color: #1e3a5f;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .experience-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- Custom Message Box -->
-    <div id="messageBox" class="message-box">
-        <p id="messageText" class="text-lg mb-4"></p>
-        <button onclick="closeMessageBox()" class="bg-custom-blue text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors">
-            OK
-        </button>
-    </div>
-
-    <!-- Header Section -->
-    <header class="bg-custom-blue text-white py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl shadow-lg">
-        <div class="flex items-center space-x-4">
-            <!-- Simple SVG logo with brand  -->
-            <svg class="h-8 w-8 text-custom-yellow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            <img src="logo.png" alt="Smile Bone Benefits" class="h-8 md:h-10">
-               
-        </div>
-        <!-- Simple navigation for a landing page -->
-        <nav class="hidden md:flex space-x-6">
-            <a href="#about" class="hover:text-custom-yellow transition-colors">About Us</a>
-            <a href="#how-it-works" class="hover:text-custom-yellow transition-colors">How It Works</a>
-            <a href="#contact" class="hover:text-custom-yellow transition-colors">Contact</a>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <div class="smile">
+                        <div class="smile-curve"></div>
+                    </div>
+                </div>
+                SmileBone Marketing
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Started</a>
         </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-8 md:py-16">
-        <!-- Hero Section -->
-        <section id="hero" class="text-center mb-16">
-            <h2 class="text-4xl md:text-6xl font-extrabold text-custom-blue leading-tight mb-4">
-                Boost Your Business & Empower Your Employees
-            </h2>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Enhance your team's benefits at no cost to your business. We turn payroll taxes into a powerful wellness program.
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Marketing That Actually Works</h1>
+            <p class="hero-subtitle">25+ Years of Proven Results</p>
+            <p class="hero-description">
+                Skip the guesswork. Get marketing strategies, content creation, and sales training 
+                from someone who's been in the trenches for over two decades.
             </p>
-            <a href="#contact" class="inline-block bg-custom-blue text-white text-lg font-semibold px-8 py-4 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
-                Get Your Free Quote
-            </a>
-        </section>
+            <a href="#contact" class="cta-button" style="font-size: 1.2rem; padding: 15px 30px;">Let's Talk Strategy</a>
+        </div>
+    </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-16">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-custom-blue mb-8">
-                About Our Program
-            </h3>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-6 text-gray-700">
-                    <p class="text-lg leading-relaxed">
-                        The EmployWell Benefits program is designed to create a true win-win for your business and your employees. We help you unlock significant financial tax credits while simultaneously providing your team with a suite of valuable health and wellness benefits.
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h2>
+                        <span class="experience-highlight">25+</span>
+                        Years of Marketing Excellence
+                    </h2>
+                    <p>
+                        From pre-digital direct mail campaigns to AI-powered automation, I've navigated 
+                        every evolution in marketing. That experience means I know what works, what doesn't, 
+                        and how to adapt quickly to market changes.
                     </p>
-                    <p class="text-lg leading-relaxed">
-                        We leverage the **Section 125 Tax Benefit Program**, a legally compliant and proven method, to fund our comprehensive wellness packages. This means you don't have to change your existing benefits, and there are no out-of-pocket costs.
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 text-lg">
-                        <li>Reduce your business's tax liability.</li>
-                        <li>Increase employee take-home pay.</li>
-                        <li>Enhance benefits without raising costs.</li>
-                        <li>Improve morale and retention.</li>
-                    </ul>
                 </div>
-                <div class="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
-                    <!-- Placeholder image with a theme matching the brand -->
-                    <img src="proof-math.png" alt="Employee Benefits" class="w-full h-full object-contain">
+                
+                <div class="experience-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Campaigns Launched</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Industries</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">$50M+</div>
+                        <div class="stat-label">Revenue Generated</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Retention</div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="mb-16">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-custom-blue mb-12">
-                How It Works: A Simple 4-Step Process
-            </h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-3xl font-bold">1</span>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Request Your Free Quote</h4>
-                    <p class="text-gray-600">Tell us about your team size, payroll, and benefit goals.</p>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Core Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Content Creation</h3>
+                    <p>High-converting copy, email sequences, social media content, and sales materials that speak directly to your audience and drive action.</p>
                 </div>
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-3xl font-bold">2</span>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Review Your Custom Plan</h4>
-                    <p class="text-gray-600">We'll show you estimated savings and program options. No obligation.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">📧</div>
+                    <h3>Cold Email Campaigns</h3>
+                    <p>Complete cold outreach systems - from list building to sequence creation to deliverability optimization. Get qualified leads consistently.</p>
                 </div>
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-3xl font-bold">3</span>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Onboard Your Team</h4>
-                    <p class="text-gray-600">We handle all the setup, education, and compliance.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Marketing Consulting</h3>
+                    <p>Strategic guidance on positioning, messaging, funnel optimization, and growth tactics based on 25+ years of real-world experience.</p>
                 </div>
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-3xl font-bold">4</span>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Start Saving</h4>
-                    <p class="text-gray-600">Benefits go live, your team gains, and your business saves.</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Marketing Training</h3>
+                    <p>Train your team on proven marketing strategies, content creation, lead generation, and campaign optimization techniques.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Sales Training</h3>
+                    <p>Practical sales training focused on consultative selling, objection handling, and closing techniques that work in today's market.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Form Section -->
-        <section id="contact" class="bg-custom-blue p-8 md:p-12 rounded-3xl shadow-2xl">
-            <h3 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">
-                Ready to Get Started?
-            </h3>
-            <p class="text-lg text-center text-gray-200 mb-8 max-w-2xl mx-auto">
-                Fill out the form below to request your free, no-obligation quote and see how much your business can save.
+    <!-- Results Section -->
+    <section class="results" id="results">
+        <div class="container">
+            <h2>Proven Track Record</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <span class="result-number">400%</span>
+                    <p>Average ROI increase for clients within 6 months</p>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-number">85%</span>
+                    <p>Open rates on cold email campaigns (industry avg: 20%)</p>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-number">3x</span>
+                    <p>Conversion rate improvement on sales processes</p>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-number">90%</span>
+                    <p>Client satisfaction rate across all services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Scale Your Marketing?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Let's discuss how 25+ years of marketing experience can accelerate your growth.
             </p>
-            <form id="contactForm" class="max-w-xl mx-auto space-y-6">
-                <div>
-                    <label for="companyName" class="block text-gray-200 font-medium mb-2">Company Name</label>
-                    <input type="text" id="companyName" name="companyName" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow" required>
-                </div>
-                <div>
-                    <label for="teamSize" class="block text-gray-200 font-medium mb-2">Team Size (Approx.)</label>
-                    <input type="number" id="teamSize" name="teamSize" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow" required>
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-200 font-medium mb-2">Work Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow" required>
-                </div>
-                <div>
-                    <label for="phone" class="block text-gray-200 font-medium mb-2">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow">
-                </div>
-                <button type="submit" class="w-full bg-custom-yellow text-custom-blue text-lg font-bold px-8 py-4 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
-                    Submit for Free Quote
-                </button>
+            
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="company" placeholder="Company Name" required>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <select name="service" required>
+                    <option value="">What service interests you most?</option>
+                    <option value="content">Content Creation</option>
+                    <option value="cold-email">Cold Email Campaigns</option>
+                    <option value="consulting">Marketing Consulting</option>
+                    <option value="training">Marketing/Sales Training</option>
+                    <option value="multiple">Multiple Services</option>
+                </select>
+                <textarea name="message" placeholder="Tell me about your current marketing challenges..." rows="4"></textarea>
+                <button type="submit">Schedule Free Consultation</button>
             </form>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-16 rounded-t-xl shadow-inner">
-        <p class="text-sm">&copy; 2025 EmployWell Benefits. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 SmileBone Marketing. All rights reserved.</p>
+            <p>25+ years of marketing excellence across North America</p>
+        </div>
     </footer>
 
     <script>
-        // Function to show a custom message box
-        function showMessageBox(message) {
-            document.getElementById('messageText').innerText = message;
-            document.getElementById('messageBox').style.display = 'block';
-        }
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-        // Function to close the custom message box
-        function closeMessageBox() {
-            document.getElementById('messageBox').style.display = 'none';
-        }
-
-        // Handle form submission
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // For now, we will simply show a success message.
-            // In a real-world scenario, you would send this data to a backend.
-            showMessageBox("Thank you! We have received your request and will be in touch shortly.");
-
-            // Clear the form fields after submission
-            this.reset();
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Show confirmation
+            alert(`Thank you ${data.name}! I'll contact you within 24 hours to discuss your ${data.service} needs and schedule our free consultation.`);
+            
+            // Here you would send to your CRM/email service
+            console.log('Marketing lead captured:', data);
         });
     </script>
-
 </body>
 </html>
+
 
 
        
