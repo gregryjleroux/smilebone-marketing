@@ -3,351 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing That Actually Works - Smile Bone Marketing</title>
+    <title>Smile Bone Benefits</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: white;
+            font-family: 'Inter', sans-serif;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .bg-custom-blue {
+            background-color: #003366; /* EmployWell Now's brand color */
         }
-
-        header {
-            background: #2c3e50;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .text-custom-yellow {
+            color: #FFC72C;
         }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            color: #f1c40f;
-        }
-
-        .cta-btn {
-            background: #f1c40f;
-            color: #2c3e50;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .cta-btn:hover {
-            background: #f39c12;
-        }
-
-        .hero {
+        /* Style for the custom message box */
+        .message-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none; /* Hidden by default */
             text-align: center;
-            padding: 60px 0;
-            background: #f8f9fa;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: #f1c40f;
-            margin-bottom: 30px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section {
-            padding: 60px 0;
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #f1c40f;
-        }
-
-        .service-card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .stat-card {
-            text-align: center;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #f1c40f;
-            display: block;
-        }
-
-        .process {
-            background: #f8f9fa;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .step {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .step-number {
-            background: #f1c40f;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-
-        .big-cta {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 60px 0;
-        }
-
-        .big-cta h2 {
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .big-cta .cta-btn {
-            font-size: 1.2rem;
-            padding: 15px 30px;
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Smile Bone Marketing</a>
+<body class="bg-gray-50 text-gray-800">
 
-                <nav>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#results">Results</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+    <!-- Custom Message Box -->
+    <div id="messageBox" class="message-box">
+        <p id="messageText" class="text-lg mb-4"></p>
+        <button onclick="closeMessageBox()" class="bg-custom-blue text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors">
+            OK
+        </button>
+    </div>
 
-                <a href="#contact" class="cta-btn">Get Started</a>
-            </div>
+    <!-- Header Section -->
+    <header class="bg-custom-blue text-white py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl shadow-lg">
+        <div class="flex items-center space-x-4">
+            <!-- Simple SVG logo with brand  -->
+            <svg class="h-8 w-8 text-custom-yellow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <img src="logo.png" alt="Smile Bone Benefits" class="h-8 md:h-10">
+               
         </div>
+        <!-- Simple navigation for a landing page -->
+        <nav class="hidden md:flex space-x-6">
+            <a href="#about" class="hover:text-custom-yellow transition-colors">About Us</a>
+            <a href="#how-it-works" class="hover:text-custom-yellow transition-colors">How It Works</a>
+            <a href="#contact" class="hover:text-custom-yellow transition-colors">Contact</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Marketing That Actually Works</h1>
-            <div class="subtitle">25+ Years of Proven Results</div>
-            <p>Skip the guesswork. Get marketing strategies, content creation, and sales training from someone who's been in the trenches for over two decades.</p>
-            <a href="#contact" class="cta-btn">Let's Talk Strategy</a>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Why Experience Matters</h2>
-            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                From pre-digital direct mail campaigns to AI-powered automation, I've navigated every evolution in marketing. That experience means I know what works, what doesn't, and how to adapt quickly to market changes.
+    <main class="container mx-auto px-4 py-8 md:py-16">
+        <!-- Hero Section -->
+        <section id="hero" class="text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-custom-blue leading-tight mb-4">
+                Boost Your Business & Empower Your Employees
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Enhance your team's benefits at no cost to your business. We turn payroll taxes into a powerful wellness program.
             </p>
-        </div>
-    </section>
+            <a href="#contact" class="inline-block bg-custom-blue text-white text-lg font-semibold px-8 py-4 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
+                Get Your Free Quote
+            </a>
+        </section>
 
-    <section id="services" class="section">
-        <div class="container">
-            <h2>Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Content Creation & Copywriting</h3>
-                    <p>High-converting copy, email sequences, social media content, and sales materials that speak directly to your audience and drive action.</p>
+        <!-- About Us Section -->
+        <section id="about" class="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-16">
+            <h3 class="text-3xl md:text-4xl font-bold text-center text-custom-blue mb-8">
+                About Our Program
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6 text-gray-700">
+                    <p class="text-lg leading-relaxed">
+                        The EmployWell Benefits program is designed to create a true win-win for your business and your employees. We help you unlock significant financial tax credits while simultaneously providing your team with a suite of valuable health and wellness benefits.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        We leverage the **Section 125 Tax Benefit Program**, a legally compliant and proven method, to fund our comprehensive wellness packages. This means you don't have to change your existing benefits, and there are no out-of-pocket costs.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        <li>Reduce your business's tax liability.</li>
+                        <li>Increase employee take-home pay.</li>
+                        <li>Enhance benefits without raising costs.</li>
+                        <li>Improve morale and retention.</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Lead Generation Systems</h3>
-                    <p>Complete cold outreach systems - from list building to sequence creation to deliverability optimization. Get qualified leads consistently.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Marketing Strategy & Consulting</h3>
-                    <p>Strategic guidance on positioning, messaging, funnel optimization, and growth tactics based on 25+ years of real-world experience.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Team Training & Workshops</h3>
-                    <p>Train your team on proven marketing strategies, content creation, lead generation, and campaign optimization techniques.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Sales Training & Coaching</h3>
-                    <p>Practical sales training focused on consultative selling, objection handling, and closing techniques that work in today's market.</p>
+                <div class="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                    <!-- Placeholder image with a theme matching the brand -->
+                    <img src="proof-math.png" alt="Employee Benefits" class="w-full h-full object-contain">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section process">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Discovery Call</h3>
-                    <p>We discuss your goals, challenges, and current marketing efforts to identify the best opportunities.</p>
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="mb-16">
+            <h3 class="text-3xl md:text-4xl font-bold text-center text-custom-blue mb-12">
+                How It Works: A Simple 4-Step Process
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-3xl font-bold">1</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Request Your Free Quote</h4>
+                    <p class="text-gray-600">Tell us about your team size, payroll, and benefit goals.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Strategy Development</h3>
-                    <p>I create a customized marketing strategy based on your specific industry, audience, and objectives.</p>
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-3xl font-bold">2</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Review Your Custom Plan</h4>
+                    <p class="text-gray-600">We'll show you estimated savings and program options. No obligation.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Implementation</h3>
-                    <p>We execute the strategy with proven systems, content creation, and ongoing optimization.</p>
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-3xl font-bold">3</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Onboard Your Team</h4>
+                    <p class="text-gray-600">We handle all the setup, education, and compliance.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Results & Growth</h3>
-                    <p>Track performance, refine approaches, and scale what works to drive consistent growth.</p>
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-3xl shadow-xl text-center hover:scale-105 transform transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-custom-blue rounded-full flex items-center justify-center mb-4">
+                        <span class="text-white text-3xl font-bold">4</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2 text-custom-blue">Start Saving</h4>
+                    <p class="text-gray-600">Benefits go live, your team gains, and your business saves.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="results" class="section">
-        <div class="container">
-            <h2>Results That Speak</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">340%</span>
-                    <p>Average ROI increase for clients within 6 months</p>
+        <!-- Contact Form Section -->
+        <section id="contact" class="bg-custom-blue p-8 md:p-12 rounded-3xl shadow-2xl">
+            <h3 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">
+                Ready to Get Started?
+            </h3>
+            <p class="text-lg text-center text-gray-200 mb-8 max-w-2xl mx-auto">
+                Fill out the form below to request your free, no-obligation quote and see how much your business can save.
+            </p>
+            <form id="contactForm" class="max-w-xl mx-auto space-y-6">
+                <div>
+                    <label for="companyName" class="block text-gray-200 font-medium mb-2">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow" required>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">47%</span>
-                    <p>Open rates on cold email campaigns (industry avg: 20%)</p>
+                <div>
+                    <label for="teamSize" class="block text-gray-200 font-medium mb-2">Team Size (Approx.)</label>
+                    <input type="number" id="teamSize" name="teamSize" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow" required>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">185%</span>
-                    <p>Conversion rate improvement on sales processes</p>
+                <div>
+                    <label for="email" class="block text-gray-200 font-medium mb-2">Work Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow" required>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">98%</span>
-                    <p>Client satisfaction rate across all services</p>
+                <div>
+                    <label for="phone" class="block text-gray-200 font-medium mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="w-full p-3 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-custom-yellow">
                 </div>
-            </div>
-        </div>
-    </section>
+                <button type="submit" class="w-full bg-custom-yellow text-custom-blue text-lg font-bold px-8 py-4 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
+                    Submit for Free Quote
+                </button>
+            </form>
+        </section>
 
-    <section id="contact" class="big-cta">
-        <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Let's discuss how 25+ years of marketing experience can accelerate your growth.</p>
-            <a href="mailto:hello@smilebonemarketing.com" class="cta-btn">Start the Conversation</a>
-        </div>
-    </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-16 rounded-t-xl shadow-inner">
+        <p class="text-sm">&copy; 2025 EmployWell Benefits. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to show a custom message box
+        function showMessageBox(message) {
+            document.getElementById('messageText').innerText = message;
+            document.getElementById('messageBox').style.display = 'block';
+        }
+
+        // Function to close the custom message box
+        function closeMessageBox() {
+            document.getElementById('messageBox').style.display = 'none';
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // For now, we will simply show a success message.
+            // In a real-world scenario, you would send this data to a backend.
+            showMessageBox("Thank you! We have received your request and will be in touch shortly.");
+
+            // Clear the form fields after submission
+            this.reset();
+        });
+    </script>
+
 </body>
 </html>
+
+
+       
+  
