@@ -38,16 +38,17 @@
             align-items: center;
         }
 
-        .logo {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
+      .logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
 .logo img {
-    height: 80px;
+    height: 50px;
     width: auto;
-    max-height: 80px;
 }
         nav ul {
             display: flex;
@@ -208,9 +209,11 @@
 
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
 
             nav ul {
                 gap: 15px;
