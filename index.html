@@ -36,39 +36,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100px;
         }
-        .logo {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
 
-.logo img {
-    height: 80px;
-    width: auto;
-}
-Replace lines 32-35 with:
-css.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-}
-Replace lines 55-59 with:
-cssnav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    font-size: 1.3rem;
-}
-Delete lines 189-195 (the duplicate .header-content rule in the media query).RetryClaude can make mistakes. Please double-check responses.
-.logo img {
-    height: 50px;
-    width: auto;
-}
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -79,7 +63,7 @@ Delete lines 189-195 (the duplicate .header-content rule in the media query).Ret
             text-decoration: none;
             color: white;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
 
         nav a:hover {
@@ -228,11 +212,11 @@ Delete lines 189-195 (the duplicate .header-content rule in the media query).Ret
 
         @media (max-width: 768px) {
             .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
+                flex-direction: column;
+                gap: 20px;
+                height: auto;
+                padding: 20px 0;
+            }
 
             nav ul {
                 gap: 15px;
@@ -247,6 +231,10 @@ Delete lines 189-195 (the duplicate .header-content rule in the media query).Ret
             .hero .subtitle {
                 font-size: 1.2rem;
             }
+
+            .logo img {
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -254,9 +242,9 @@ Delete lines 189-195 (the duplicate .header-content rule in the media query).Ret
     <header>
         <div class="container">
             <div class="header-content">
-               <a href="#" class="logo">
-    <img src="logo.png" alt="Smile Bone Marketing">
-</a>
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Smile Bone Marketing">
+                </a>
 
                 <nav>
                     <ul>
