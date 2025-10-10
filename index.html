@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing That Actually Works - Smile Bone Marketing</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="description" content="25+ years of proven marketing results. Get marketing strategies, content creation, and sales training that actually work. Skip the guesswork with experienced guidance.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Marketing That Actually Works - Smile Bone Marketing">
+    <meta property="og:description" content="25+ years of proven marketing results. Expert marketing strategies, content creation, and sales training.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smilebonemarketing.com">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -13,42 +24,37 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-color: #0A0A0A;
+            --text-color: #F5F5F5;
+            --accent-color: #ffd54f;
+            --primary-blue: #0056d2;
+            --secondary-blue: #2c3e50;
+            --footer-bg: #111111;
+            --footer-text: #CCCCCC;
+            --button-bg: #0056d2;
+            --button-text: #FFFFFF;
+            --card-bg: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
         body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-:root {
-  --bg-color: #0A0A0A;
-  --text-color: #F5F5F5;
-  --accent-color: #ffd54f;    /* royal blue */
-  --footer-bg: #111111;
-  --footer-text: #CCCCCC;
-  --button-bg: #0056d2;
-  --button-text: #FFFFFF;
-}
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-a:hover {
-  text-decoration: underline;
-}
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
 
-button, .cta {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
+        a:hover {
+            text-decoration: underline;
+        }
 
         .container {
             max-width: 1200px;
@@ -56,19 +62,21 @@ button, .cta {
             padding: 0 20px;
         }
 
+        /* Header Styles */
         header {
-            background: #0056d2;
+            background: var(--primary-blue);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: var(--shadow);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100px;
+            min-height: 80px;
         }
 
         .logo {
@@ -83,62 +91,109 @@ button, .cta {
         .logo img {
             width: 200px; 
             height: auto;
-            display:block;
-            margin: 0 auto;
+            display: block;
         }
 
-        nav ul {
+        .logo-text {
+            display: none;
+        }
+
+        /* Navigation */
+        .desktop-nav ul {
             display: flex;
             list-style: none;
             gap: 30px;
         }
 
-        nav a {
+        .desktop-nav a {
             text-decoration: none;
             color: white;
             font-weight: 500;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #ffd54f;
+        .desktop-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary-blue);
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 15px 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
         .cta-btn {
-            background: #f1c40f;
-            color: #2c3e50;
+            background: var(--accent-color);
+            color: var(--secondary-blue);
             padding: 12px 24px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .cta-btn:hover {
-            background: #003ea0;
+            background: #e6c046;
+            transform: translateY(-2px);
+            text-decoration: none;
         }
 
+        /* Hero Section */
         .hero {
-  background-color: #2C3E50;   /* deep muted navy */
-  color: #FFFFFF;              /* crisp white text */
-  padding: 6rem 2rem;
-  text-align: center;
-}
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            color: #FFFFFF;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
 
-.hero h1 span {
-  color: #FFD54F; /* gold accent for one word if you want emphasis */
-}
+        .hero h1 span {
+            color: var(--accent-color);
+        }
 
         .hero .subtitle {
             font-size: 1.5rem;
-            color: #f1c40f;
+            color: var(--accent-color);
             margin-bottom: 30px;
+            font-weight: 600;
         }
 
         .hero p {
@@ -147,8 +202,10 @@ button, .cta {
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.9;
         }
 
+        /* Section Styles */
         .section {
             padding: 60px 0;
         }
@@ -157,9 +214,28 @@ button, .cta {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 40px;
-            color: #0056d2;
+            color: var(--primary-blue);
+            font-weight: 700;
         }
 
+        .section p {
+            color: var(--text-color);
+        }
+
+        /* Experience Section - FIXED */
+        #experience {
+            background-color: #f8f9fa;  /* Light gray background */
+        }
+
+        #experience h2 {
+            color: var(--primary-blue);  /* Keep blue heading */
+        }
+
+        #experience p {
+            color: #666666;  /* Dark gray text for readability */
+        }
+
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -168,24 +244,32 @@ button, .cta {
         }
 
         .service-card {
-            background: white;
+            background: var(--card-bg);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #f1c40f;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .service-card h3 {
-  background-color: #0056D2; /* royal blue */
-  color: #FFFFFF;            /* crisp white text */
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -195,21 +279,36 @@ button, .cta {
 
         .stat-card {
             text-align: center;
-            background: white;
+            background: var(--card-bg);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
         }
 
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
-            color: #f1c40f;
+            color: var(--accent-color);
             display: block;
         }
 
+        .stat-card p {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Process Section */
         .process {
             background: #f8f9fa;
+        }
+
+        .process .section h2 {
+            color: var(--secondary-blue);
         }
 
         .process-steps {
@@ -225,10 +324,10 @@ button, .cta {
         }
 
         .step-number {
-            background: #f1c40f;
-            color: white;
-            width: 50px;
-            height: 50px;
+            background: var(--accent-color);
+            color: var(--secondary-blue);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -238,8 +337,19 @@ button, .cta {
             margin: 0 auto 20px;
         }
 
+        .step h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* CTA Section */
         .big-cta {
-            background: #2c3e50;
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
             color: white;
             text-align: center;
             padding: 60px 0;
@@ -255,30 +365,115 @@ button, .cta {
             padding: 15px 30px;
         }
 
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: var(--accent-color);
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Focus Styles for Accessibility */
+        .focus-visible:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 20px;
-                height: auto;
-                padding: 20px 0;
+                gap: 15px;
+                padding: 15px 0;
+                position: relative;
             }
 
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            .logo-text {
+                display: inline;
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero .subtitle {
                 font-size: 1.2rem;
             }
 
-            .logo img {
-                height: 60px;
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .stats-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card,
+            .stat-card {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -288,134 +483,198 @@ button, .cta {
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <img src="logo.png" alt="Smile Bone Marketing">
+                    <img src="logo.png" alt="Smile Bone Marketing Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span class="logo-text">SmileBone Marketing</span>
                 </a>
 
-                <nav>
+                <nav class="desktop-nav">
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#results">Results</a></li>
-                        <li><a href="blog/cold-email-vs-funnels.html">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#services" class="focus-visible">Services</a></li>
+                        <li><a href="#experience" class="focus-visible">Experience</a></li>
+                        <li><a href="#results" class="focus-visible">Results</a></li>
+                        <li><a href="blog/cold-email-vs-funnels.html" class="focus-visible">Blog</a></li>
+                        <li><a href="#contact" class="focus-visible">Contact</a></li>
                     </ul>
                 </nav>
 
-                <a href="#contact" class="cta-btn">Get Started</a>
+                <button class="mobile-nav focus-visible" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <a href="#contact" class="cta-btn focus-visible">Get Started</a>
             </div>
+
+            <nav class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#services" class="focus-visible" onclick="closeMobileMenu()">Services</a></li>
+                    <li><a href="#experience" class="focus-visible" onclick="closeMobileMenu()">Experience</a></li>
+                    <li><a href="#results" class="focus-visible" onclick="closeMobileMenu()">Results</a></li>
+                    <li><a href="blog/cold-email-vs-funnels.html" class="focus-visible" onclick="closeMobileMenu()">Blog</a></li>
+                    <li><a href="#contact" class="focus-visible" onclick="closeMobileMenu()">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Marketing That Actually Works</h1>
-            <div class="subtitle">25+ Years of Proven Results</div>
-            <p>Skip the guesswork. Get marketing strategies, content creation, and sales training from someone who's been in the trenches for over two decades.</p>
-            <a href="#contact" class="cta-btn">Let's Talk Strategy</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Marketing That Actually <span>Works</span></h1>
+                <div class="subtitle">25+ Years of Proven Results</div>
+                <p>Skip the guesswork. Get marketing strategies, content creation, and sales training from someone who's been in the trenches for over two decades.</p>
+                <a href="#contact" class="cta-btn focus-visible">Let's Talk Strategy</a>
+            </div>
+        </section>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Why Experience Matters</h2>
-            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                From pre-digital direct mail campaigns to AI-powered automation, I've navigated every evolution in marketing. That experience means I know what works, what doesn't, and how to adapt quickly to market changes.
-            </p>
-        </div>
-    </section>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Why Experience Matters</h2>
+                <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    From pre-digital direct mail campaigns to AI-powered automation, I've navigated every evolution in marketing. That experience means I know what works, what doesn't, and how to adapt quickly to market changes.
+                </p>
+            </div>
+        </section>
 
-    <section id="services" class="section">
-        <div class="container">
-            <h2>Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Content Creation & Copywriting</h3>
-                    <p>High-converting copy, email sequences, social media content, and sales materials that speak directly to your audience and drive action.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Lead Generation Systems</h3>
-                    <p>Complete cold outreach systems - from list building to sequence creation to deliverability optimization. Get qualified leads consistently.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Marketing Strategy & Consulting</h3>
-                    <p>Strategic guidance on positioning, messaging, funnel optimization, and growth tactics based on 25+ years of real-world experience.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Team Training & Workshops</h3>
-                    <p>Train your team on proven marketing strategies, content creation, lead generation, and campaign optimization techniques.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Sales Training & Coaching</h3>
-                    <p>Practical sales training focused on consultative selling, objection handling, and closing techniques that work in today's market.</p>
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Services</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3>Content Creation & Copywriting</h3>
+                        <p>High-converting copy, email sequences, social media content, and sales materials that speak directly to your audience and drive action.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Lead Generation Systems</h3>
+                        <p>Complete cold outreach systems - from list building to sequence creation to deliverability optimization. Get qualified leads consistently.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Marketing Strategy & Consulting</h3>
+                        <p>Strategic guidance on positioning, messaging, funnel optimization, and growth tactics based on 25+ years of real-world experience.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Team Training & Workshops</h3>
+                        <p>Train your team on proven marketing strategies, content creation, lead generation, and campaign optimization techniques.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Sales Training & Coaching</h3>
+                        <p>Practical sales training focused on consultative selling, objection handling, and closing techniques that work in today's market.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section process">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Discovery Call</h3>
-                    <p>We discuss your goals, challenges, and current marketing efforts to identify the best opportunities.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Strategy Development</h3>
-                    <p>I create a customized marketing strategy based on your specific industry, audience, and objectives.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Implementation</h3>
-                    <p>We execute the strategy with proven systems, content creation, and ongoing optimization.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Results & Growth</h3>
-                    <p>Track performance, refine approaches, and scale what works to drive consistent growth.</p>
+        <section class="section process">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Discovery Call</h3>
+                        <p>We discuss your goals, challenges, and current marketing efforts to identify the best opportunities.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Strategy Development</h3>
+                        <p>I create a customized marketing strategy based on your specific industry, audience, and objectives.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>We execute the strategy with proven systems, content creation, and ongoing optimization.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Results & Growth</h3>
+                        <p>Track performance, refine approaches, and scale what works to drive consistent growth.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="results" class="section">
-        <div class="container">
-            <h2>Results That Speak</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">340%</span>
-                    <p>Average ROI increase for clients within 6 months</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">47%</span>
-                    <p>Open rates on cold email campaigns (industry avg: 20%)</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">185%</span>
-                    <p>Conversion rate improvement on sales processes</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">98%</span>
-                    <p>Client satisfaction rate across all services</p>
+        <section id="results" class="section">
+            <div class="container">
+                <h2>Results That Speak</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">340%</span>
+                        <p>Average ROI increase for clients within 6 months</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">47%</span>
+                        <p>Open rates on cold email campaigns (industry avg: 20%)</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">185%</span>
+                        <p>Conversion rate improvement on sales processes</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <p>Client satisfaction rate across all services</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="big-cta">
-        <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Let's discuss how 25+ years of marketing experience can accelerate your growth.</p>
-            <a href="mailto:info@smilebonemarketing.com" class="cta-btn">Start the Conversation</a>
-        </div>
-    </section>
+        <section id="contact" class="big-cta">
+            <div class="container">
+                <h2>Ready to Grow Your Business?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Let's discuss how 25+ years of marketing experience can accelerate your growth.</p>
+                <a href="mailto:info@smilebonemarketing.com" class="cta-btn focus-visible">Start the Conversation</a>
+            </div>
+        </section>
+    </main>
     
     <footer>
-  <p>&copy; 2025 Smile Bone Marketing. All rights reserved.</p>
-  <p>Ph. 616.779.8007 | <a href="https://smilebonemarketing.com">smilebonemarketing.com</a></p>
-</footer>
+        <div class="container">
+            <p>© 2025 Smile Bone Marketing. All rights reserved.</p>
+            <p>Ph. <a href="tel:6167798007">616.779.8007</a> | <a href="https://smilebonemarketing.com">smilebonemarketing.com</a></p>
+        </div>
+    </footer>
 
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('active');
+        }
+        
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu
+            document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const menu = document.getElementById('mobileMenu');
+                const menuBtn = document.getElementById('mobileMenuBtn');
+                
+                if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
