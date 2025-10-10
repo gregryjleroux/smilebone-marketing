@@ -25,13 +25,12 @@
         }
 
         :root {
-            --sb-blue: #003366;          /* SmileBone brand blue */
-            --sb-yellow: #FFC72C;        /* SmileBone brand yellow */
-            --light-blue: #e6f2ff;       /* Very light blue for sections */
-            --text-dark: #2c3e50;        /* Dark text */
-            --text-light: #666666;       /* Medium gray text */
-            --white: #FFFFFF;            /* Pure white */
-            --light-gray: #f8f9fa;       /* Light gray backgrounds */
+            --sb-blue: #003366;
+            --sb-yellow: #FFC72C;
+            --text-dark: #2c3e50;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --light-gray: #f8f9fa;
             --shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
@@ -59,7 +58,7 @@
             padding: 0 20px;
         }
 
-        /* Header Styles - SmileBone Brand Colors */
+        /* Header Styles */
         header {
             background: var(--sb-blue);
             padding: 15px 0;
@@ -255,4 +254,14 @@
             border-radius: 15px;
             box-shadow: var(--shadow);
             border-left: 4px solid var(--sb-yellow);
-            transition: transform 0.
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--sb-blue);
+            font-size:
